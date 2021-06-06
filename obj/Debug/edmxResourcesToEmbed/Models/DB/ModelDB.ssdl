@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SegurosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="afiliados">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="cedula" Type="int" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="date" Nullable="false" />
+    <Property Name="lugar_residencia" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="fecha_registro" Type="date" Nullable="false" />
+    <Property Name="valor_plan" Type="int" Nullable="false" />
+    <Property Name="monto_asegurado" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SegurosModelStoreContainer">
+    <EntitySet Name="afiliados" EntityType="Self.afiliados" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SegurosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="afiliados">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cedula" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="nombres" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="apellidos" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="fecha_nacimiento" Type="date" Nullable="false" />
+    <Property Name="lugar_residencia" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="correo" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+    <Property Name="valor_plan" Type="int" Nullable="false" />
+    <Property Name="monto_asegurado" Type="int" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="desactivaciones">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_afiliado" Type="int" Nullable="false" />
+    <Property Name="fecha" Type="date" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__desactiva__id_af__34C8D9D1">
+    <End Role="afiliados" Type="Self.afiliados" Multiplicity="1" />
+    <End Role="desactivaciones" Type="Self.desactivaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="afiliados">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="desactivaciones">
+        <PropertyRef Name="id_afiliado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SegurosModelStoreContainer">
+    <EntitySet Name="afiliados" EntityType="Self.afiliados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="desactivaciones" EntityType="Self.desactivaciones" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__desactiva__id_af__34C8D9D1" Association="Self.FK__desactiva__id_af__34C8D9D1">
+      <End Role="afiliados" EntitySet="afiliados" />
+      <End Role="desactivaciones" EntitySet="desactivaciones" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

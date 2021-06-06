@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BdsegurosUltimaModelStoreContainer" CdmEntityContainer="BdsegurosUltimaEntities">
+    <EntitySetMapping Name="afiliados">
+      <EntityTypeMapping TypeName="BdsegurosUltimaModel.afiliados">
+        <MappingFragment StoreEntitySet="afiliados">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="lugar_residencia" ColumnName="lugar_residencia" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="valor_plan" ColumnName="valor_plan" />
+          <ScalarProperty Name="monto_asegurado" ColumnName="monto_asegurado" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="desactivaciones">
+      <EntityTypeMapping TypeName="BdsegurosUltimaModel.desactivaciones">
+        <MappingFragment StoreEntitySet="desactivaciones">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_afiliado" ColumnName="id_afiliado" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
